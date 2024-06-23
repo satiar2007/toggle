@@ -1,0 +1,45 @@
+*margin {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #00FFFF;
+    transition: all 0.3s ease-in-out;
+}
+
+body.dark {
+    background-color: #000;
+}
+
+.toggle {
+    position: relative;
+    height: 130px;
+    width: 300px;
+    border-radius: 100px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 5px 10px rgb(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+.toggle::before {
+    content: "";
+    position: absolute;
+    height: 110px;
+    width: 110px;
+    background: #000;
+    border-radius: 50%;
+    top: 50%;
+    left: 14px;
+    transform: translate(-5%, -50%);
+    transition: all 0.3s ease-in-out;
+}
+
+.toggle.activate::before {
+    left: calc(100% - 100px - 14px);
+}
